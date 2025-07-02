@@ -1,0 +1,121 @@
+/* --- Reset --- */
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* --- Base Typography --- */
+body {
+  background: #f6f6f6;
+  color: #252525;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #252525;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 0.7em;
+  line-height: 1.1;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.4rem; }
+h4 { font-size: 1.1rem; }
+
+p {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+a {
+  color: #14ce6c;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a:hover {
+  color: #10b96b;
+  text-decoration: underline;
+}
+
+/* --- Buttons --- */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  outline: none;
+  transition: border 0.2s;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #14ce6c;
+}
+
+/* --- Utility --- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.text-center { text-align: center; }
+.mt-2 { margin-top: 16px; }
+.mt-3 { margin-top: 24px; }
+.mb-2 { margin-bottom: 16px; }
+.mb-3 { margin-bottom: 24px; }
+.rounded { border-radius: 8px; }
+.shadow { box-shadow: 0 2px 16px rgba(20,206,108,0.10); }
+
+/* --- Scrollbar (optional) --- */
+::-webkit-scrollbar {
+  width: 8px;
+  background: #eee;
+}
+::-webkit-scrollbar-thumb {
+  background: #e7e2f7;
+  border-radius: 8px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .container { padding: 0 12px; }
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.3rem; }
+}
+
+/* --- Selection color --- */
+::selection {
+  background: #14ce6c33;
+}
+
+/* --- Hide number input arrows --- */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
