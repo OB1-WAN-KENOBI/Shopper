@@ -62,7 +62,7 @@ function updateCartDisplay() {
         body.innerHTML += `
         <div class="cart-modal-item">
           <img src="${
-            item.img ? item.img : "https://via.placeholder.com/44"
+            item.img ? item.img : "src/images/Apple wireless Airpod.jpg"
           }" class="cart-modal-item-img" alt="">
           <div class="cart-modal-item-info">
             <div class="cart-modal-item-title">${item.title}</div>
