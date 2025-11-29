@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { HomePage } from "@/pages/home";
 import { ProductsPage } from "@/pages/products";
 import { BlogPage } from "@/pages/blog";
@@ -10,7 +10,7 @@ function App() {
   return (
     <CartProvider>
       <ToastProvider>
-        <BrowserRouter>
+        <HashRouter>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/products" element={<ProductsPage />} />
@@ -18,7 +18,7 @@ function App() {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/features" element={<FeaturesPage />} />
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </ToastProvider>
     </CartProvider>
   );
