@@ -128,16 +128,21 @@ export function Header({ onCartClick }: HeaderProps) {
             )}
           </Button>
         </div>
+      </div>
 
-        {/* Mobile menu */}
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="border-t md:hidden"
-          >
-            <nav className="flex flex-col gap-4 p-4">
+      {/* Mobile menu */}
+      {mobileMenuOpen && (
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: "auto" }}
+          exit={{ opacity: 0, height: 0 }}
+          className="w-full border-t md:hidden overflow-hidden"
+        >
+          <div className="container mx-auto px-4">
+            <div className="py-4 md:hidden">
+              <SearchAutocomplete onSelect={handleProductSelect} />
+            </div>
+            <nav className="flex flex-col gap-4 pb-4">
               {[
                 { name: "Features", path: "/features" },
                 { name: "Products", path: "/products" },
@@ -162,9 +167,9 @@ export function Header({ onCartClick }: HeaderProps) {
                 );
               })}
             </nav>
-          </motion.div>
-        )}
-      </div>
+          </div>
+        </motion.div>
+      )}
       {selectedProduct && (
         <ProductModal
           isOpen={productModal.isOpen}
