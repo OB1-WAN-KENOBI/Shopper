@@ -33,69 +33,6 @@
 
 ### Структура проекта
 
-```mermaid
-graph TD
-    A[src/] --> B[app/]
-    A --> C[pages/]
-    A --> D[widgets/]
-    A --> E[features/]
-    A --> F[entities/]
-    A --> G[shared/]
-
-    B --> B1[App.tsx]
-    B --> B2[providers/]
-    B2 --> B3[CartProvider.tsx]
-    B2 --> B4[ToastProvider.tsx]
-
-    C --> C1[home/]
-    C --> C2[products/]
-    C --> C3[blog/]
-    C --> C4[about/]
-    C --> C5[features/]
-
-    D --> D1[header/]
-    D --> D2[footer/]
-    D --> D3[hero-section/]
-    D --> D4[product-list/]
-    D --> D5[cart-modal/]
-
-    E --> E1[add-to-cart/]
-    E --> E2[search-products/]
-    E --> E3[toggle-theme/]
-
-    F --> F1[product/]
-    F --> F2[cart/]
-    F1 --> F1A[api/]
-    F1 --> F1B[model/]
-    F1 --> F1C[ui/]
-    F2 --> F2A[model/]
-
-    G --> G1[api/]
-    G --> G2[ui/]
-    G --> G3[lib/]
-    G1 --> G1A[clients/]
-    G1 --> G1B[adapters/]
-    G1 --> G1C[cache/]
-    G1 --> G1D[utils/]
-    G2 --> G2A[Button]
-    G2 --> G2B[Card]
-    G2 --> G2C[Dialog]
-    G2 --> G2D[Badge]
-    G2 --> G2E[Skeleton]
-    G3 --> G3A[hooks/]
-    G3 --> G3B[utils.ts]
-
-    style A fill:#e1f5ff
-    style B fill:#fff4e1
-    style C fill:#ffe1f5
-    style D fill:#e1ffe1
-    style E fill:#f5e1ff
-    style F fill:#ffe1e1
-    style G fill:#e1f5e1
-```
-
-### Текстовая структура
-
 ```
 src/
 ├── app/          # Инициализация приложения, провайдеры
@@ -131,49 +68,6 @@ src/
     ├── api/      # API клиенты, адаптеры, кэш
     ├── ui/       # UI компоненты
     └── lib/      # Утилиты и хуки
-```
-
-### Взаимодействие слоев FSD
-
-```mermaid
-graph LR
-    subgraph "Слои Feature-Sliced Design"
-        direction TB
-        P[pages<br/>Страницы]
-        W[widgets<br/>Виджеты]
-        F[features<br/>Функции]
-        E[entities<br/>Сущности]
-        S[shared<br/>Общее]
-        A[app<br/>Приложение]
-    end
-
-    subgraph "Потоки данных"
-        API[DummyJSON API]
-        CACHE[Cache Service]
-        ADAPTER[Product Adapter]
-    end
-
-    A --> P
-    P --> W
-    W --> F
-    W --> E
-    F --> E
-    F --> S
-    E --> S
-    S --> API
-    API --> CACHE
-    CACHE --> ADAPTER
-    ADAPTER --> E
-
-    style P fill:#ffe1f5
-    style W fill:#e1ffe1
-    style F fill:#f5e1ff
-    style E fill:#ffe1e1
-    style S fill:#e1f5e1
-    style A fill:#fff4e1
-    style API fill:#e1f5ff
-    style CACHE fill:#fff9e1
-    style ADAPTER fill:#f0e1ff
 ```
 
 ### Слои архитектуры
